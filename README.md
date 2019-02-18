@@ -1,8 +1,8 @@
 # TaskApp by HVG
 
-Foobar is a Python library for dealing with word pluralization.
+Task app in React
 
-## Installation
+## Installation of dependencies
 
 ```bash
 npm install
@@ -15,7 +15,10 @@ npm run start
 npm run dev
 ```
 
-```
+## External dependencies
 
+```
+Node +6
+Mongodb
 
 ```
