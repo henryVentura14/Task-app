@@ -149,8 +149,10 @@ class App extends Component {
                 <form onSubmit={this.addTask}>
                   <div className="row">
                     <div className="input-field col s6">
+                      <span> {this.state.ini}</span>
+                      <br/>
                       <input
-                        disabled="true"
+                        hidden
                         name="ini"
                         value={this.state.ini}
                         onChange={this.handleChange}
@@ -179,8 +181,10 @@ class App extends Component {
                       </a>
                     </div>
                     <div className="input-field col s6">
+                    <span> {this.state.end}</span>
+                    <br/>
                       <input
-                        disabled
+                        hidden
                         name="end"
                         value={this.state.end}
                         onChange={this.handleChange}
