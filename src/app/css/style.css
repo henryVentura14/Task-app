@@ -1,7 +1,33 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
 .buttom {
     cursor: pointer;
 }
 
-.card {
+.under {
     z-index: 1;
+}
+
+.above {
+    z-index: 2;
+}
+
+.above_plus {
+    z-index: 3;
+}
+
+.fixed_clock1 {
+    position: fixed;
+    left: 2%;
+    top: 15%;
+    z-index: 6;
+}
+
+.fixed_clock2 {
+    position: fixed;
+    left: 2%;
+    top: 15%;
+    z-index: 6;
 }

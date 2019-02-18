@@ -141,21 +141,22 @@ class App extends Component {
           </div>
         </nav>
         {/*END-NAV*/}
-        <div className="container">
-          <div className="row">
-            <div className="col s3">
-              {/*CARD-FORM*/}
-              <div className="card">
-                <div className="card-content">
-                  <form onSubmit={this.addTask}>
-                    <div className="row">
-                      <div className="input-field col s6">
-                        <input
-                          name="ini"
-                          value={this.state.ini}
-                          onChange={this.handleChange}
-                          className=""
-                        />
+        <div className="row">
+          <div className="col s3">
+            {/*CARD-FORM*/}
+            <div className="card">
+              <div className="card-content">
+                <form onSubmit={this.addTask}>
+                  <div className="row">
+                    <div className="input-field col s6">
+                      <input
+                        disabled="true"
+                        name="ini"
+                        value={this.state.ini}
+                        onChange={this.handleChange}
+                        className=""
+                      />
+                      <div className="fixed_clock1">
                         {this.state.displayTimepicker ? (
                           <TimeKeeper
                             time={this.state.ini}
@@ -168,21 +169,24 @@ class App extends Component {
                         ) : (
                           false
                         )}
-                        <a
-                          className="buttom teal-text"
-                          role="buttom"
-                          onClick={() => this.toggleTimekeeper(true)}
-                        >
-                          Time Init
-                        </a>
                       </div>
-                      <div className="input-field col s6">
-                        <input
-                          name="end"
-                          value={this.state.end}
-                          onChange={this.handleChange}
-                          className=""
-                        />
+                      <a
+                        className="buttom teal-text"
+                        role="buttom"
+                        onClick={() => this.toggleTimekeeper(true)}
+                      >
+                        Time Init
+                      </a>
+                    </div>
+                    <div className="input-field col s6">
+                      <input
+                        disabled
+                        name="end"
+                        value={this.state.end}
+                        onChange={this.handleChange}
+                        className=""
+                      />
+                      <div className="fixed_clock2">
                         {this.state.displayTimepicker2 ? (
                           <TimeKeeper
                             time={this.state.end}
@@ -195,77 +199,79 @@ class App extends Component {
                         ) : (
                           false
                         )}
-                        <a
-                          className="buttom teal-text"
-                          role="buttom"
-                          onClick={() => this.toggleTimekeeper2(true)}
-                        >
-                          Time End
-                        </a>
                       </div>
+                      <a
+                        className="buttom teal-text"
+                        role="buttom"
+                        onClick={() => this.toggleTimekeeper2(true)}
+                      >
+                        Time End
+                      </a>
                     </div>
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <input
-                          name="title"
-                          value={this.state.title}
-                          onChange={this.handleChange}
-                          placeholder="Task Title"
-                        />
-                        <a className="teal-text">Title</a>
-                      </div>
+                  </div>
+                  <div className="row">
+                    <div className="input-field col s12">
+                      <input
+                        name="title"
+                        value={this.state.title}
+                        onChange={this.handleChange}
+                        placeholder="Task Title"
+                      />
+                      <a className="teal-text">Title</a>
                     </div>
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <textarea
-                          name="description"
-                          value={this.state.description}
-                          onChange={this.handleChange}
-                          placeholder="Task Description"
-                          className="materialize-textarea"
-                        />
-                        <a className="teal-text">Description</a>
-                      </div>
+                  </div>
+                  <div className="row">
+                    <div className="input-field col s12">
+                      <textarea
+                        name="description"
+                        value={this.state.description}
+                        onChange={this.handleChange}
+                        placeholder="Task Description"
+                        className="materialize-textarea"
+                      />
+                      <a className="teal-text">Description</a>
                     </div>
+                  </div>
 
-                    {/*BUTTONS*/}
+                  {/*BUTTONS*/}
 
-                    <button
-                      className="btn-small waves-effect waves-light"
-                      type="submit"
-                      name="action"
-                    >
-                      Submit
-                      <i class="material-icons right">send</i>
-                    </button>
-                  </form>
-                </div>
+                  <button
+                    className="btn-small waves-effect waves-light"
+                    type="submit"
+                    name="action"
+                  >
+                    Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+                </form>
               </div>
-              {/*END-CARD-FORM*/}
             </div>
-            <div className="card col s9">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Init</th>
-                    <th>End</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Date of creation</th>
-                    <th>Options</th>
-                    <th />
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.task.map(task => {
-                    return (
-                      <tr key={task._id}>
-                        <td>{task.ini}</td>
-                        <td>{task.end}</td>
-                        <td>{task.title}</td>
-                        <td>{task.description}</td>
-                        <td>{moment(task.date).format("llll")}</td>
-                        <td>
+            {/*END-CARD-FORM*/}
+          </div>
+          <div className="card under col s9">
+            <table>
+              <thead>
+                <tr>
+                  <th>Init</th>
+                  <th>End</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Date of creation</th>
+                  <th>Options</th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.task.map(task => {
+                  return (
+                    <tr key={task._id}>
+                      <td>{task.ini}</td>
+                      <td>{task.end}</td>
+                      <td>{task.title}</td>
+                      <td>{task.description}</td>
+                      <td>{moment(task.date).format("llll")}</td>
+                      <td>
+                        <div className={style.above}>
                           <button
                             className="blue darken-4 btn-small"
                             style={{ margin: "2px" }}
@@ -288,13 +294,13 @@ class App extends Component {
                               delete
                             </i>
                           </button>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

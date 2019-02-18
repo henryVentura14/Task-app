@@ -1,1 +1,1 @@
-.buttom{cursor:pointer}.card{z-index:1}
+html{font-family:Roboto,sans-serif}.buttom{cursor:pointer}.under{z-index:1}.above{z-index:2}.above_plus{z-index:3}.fixed_clock1,.fixed_clock2{position:fixed;left:2%;top:15%;z-index:6}
